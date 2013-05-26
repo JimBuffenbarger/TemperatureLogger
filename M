@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+. ./ENV
+
+#adb help ; exit
+
+P=${PWD##*/}-debug.apk
+p=$(cd src ; echo */*/* | sed "s;/;.;g")
+
+set -x
+
+ant clean
+ant debug
+
+#adb uninstall $p
+adb install -r bin/$P
+
+# # logcat

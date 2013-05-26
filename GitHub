@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -ex
+
+app=TemperatureLogger
+
+cd ~/tmp
+rm -rf $app
+cp -r ~/ws/src/$app $app
+cd $app
+find -name .svn -type d | xargs rm -rf
+
+git init
+git add .
+git commit -m "from svn"
+git remote add origin https://github.com/JimBuffenbarger/$app.git
+git pull origin master
+git push origin master
+
+cd ~/tmp
+rm -rf $app

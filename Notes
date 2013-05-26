@@ -1,0 +1,5 @@
+Wed May  8 15:10:03 2013
+
+The commented parts of wave:~/.elisp/ftp-sites.el allow
+Tramp to connect to the droid.
+
